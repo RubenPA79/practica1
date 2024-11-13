@@ -10,18 +10,18 @@ function crearVector(n, m) {
   return vector;
 }
 
-//Sumar dos vectores si tienen el mismo número de elementos
-
-function sumaVector(v1, v2) {
-  if (v1.length !== v2.length) {
+//Sumar vectores si tienen el mismo número de elementos
+function sumaVector(v1, v2, v3) {
+  if (v1.length !== v2.length || v2.length !== v3.length) {
     return []; // Devuelve un array vacío si las longitudes no coinciden
   }
   let suma = [];
-  for (let i = 0; i < v1.length; i++) { 
-    suma.push(v1[i] + v2[i]);  
+  for (let i = 0; i < v1.length; i++) {
+    suma.push(v1[i] + v2[i] + v3[i]);
   }
   return suma;
 }
+
 
 //Multiplicar un vector por un número
 function productoNumeroVector(n, v) {
@@ -63,8 +63,8 @@ function cuadradoNumero(n) {
 //Exportar las funciones para poder usarlas en otro archivo
 module.exports = {
   crearVector,
-  sumaVector,
   productoNumeroVector,
+  sumaVector,
   restaVector,
   productoVector,
   cuadradoNumero
